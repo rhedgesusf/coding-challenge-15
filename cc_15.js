@@ -70,6 +70,12 @@ function addRiskItem(riskName, riskLevel, department) {
       // remove from dashboard
       riskDashboard.removeChild(card);
     });
+
+    card.addEventListener("click", (event) => {
+        event.stopPropagation();
+      });
+    
+
     card.appendChild(button);
 
     riskDashboard.appendChild(card);
@@ -136,4 +142,15 @@ incRiskLevel.addEventListener("click", (event) => {
   }
 });
 
+////////////////////////////////////////
+// Task 6: Handling Event Propagation //
+////////////////////////////////////////
 
+console.log("--------------------------------------");
+console.log("Task 6: Handling Event Propagation");
+
+riskDashboard.addEventListener("click", (event) => {
+    console.log("Parent Card Clicked");
+  });
+
+  
