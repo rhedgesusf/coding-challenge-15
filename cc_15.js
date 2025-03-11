@@ -16,13 +16,12 @@ const addRiskButton = document.getElementById("addRiskButton");
 
 // add a click listener to the button
 addRiskButton.addEventListener("click", (event) => {
-    let riskName = document.getElementById("name").value;
-    let riskLevel = document.getElementById("level").value;
-    let department = document.getElementById("department").value;
+  let riskName = document.getElementById("name").value;
+  let riskLevel = document.getElementById("level").value;
+  let department = document.getElementById("department").value;
 
-    addRiskItem(riskName, riskLevel, department);
-
-  });
+  addRiskItem(riskName, riskLevel, department);
+});
 
 ///////////////////////////////////////////
 // Task 2: Adding Risk Items Dynamically //
@@ -53,12 +52,11 @@ function addRiskItem(riskName, riskLevel, department) {
 
     // add click listener
     button.addEventListener("click", (event) => {
+      event.stopPropagation();
       // remove from dashboard
       riskDashboard.removeChild(card);
-      event.stopPropagation();
     });
     card.appendChild(button);
-
 
     riskDashboard.appendChild(card);
   }
@@ -66,3 +64,14 @@ function addRiskItem(riskName, riskLevel, department) {
 
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+
+/////////////////////////////////
+// Task 3: Removing Risk Items //
+/////////////////////////////////
+
+console.log("--------------------------------------");
+console.log("Task 3: Removing Risk Items");
+
+// Added under task 2 on line 49-59
+
+addRiskItem("Market Fluctuations", "High", "Finance");
