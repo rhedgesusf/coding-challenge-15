@@ -46,18 +46,18 @@ function addRiskItem(riskName, riskLevel, department) {
     <label>${department}</label>
     </div>`;
 
-    switch(riskLevel) {
-        case "High":
-            card.style.backgroundColor = "#D2042D";
-            break;
-        case "Medium":
-            card.style.backgroundColor = "gold";
-            break;
-        case "Low":
-            card.style.backgroundColor = "darkgreen";
-            break;
-        default:
-            card.style.backgroundColor = "darkgrey";
+    switch (riskLevel) {
+      case "High":
+        card.style.backgroundColor = "#D2042D";
+        break;
+      case "Medium":
+        card.style.backgroundColor = "gold";
+        break;
+      case "Low":
+        card.style.backgroundColor = "darkgreen";
+        break;
+      default:
+        card.style.backgroundColor = "darkgrey";
     }
 
     // create a button
@@ -101,3 +101,39 @@ console.log("Task 4: Categorizing Risks by Level");
 
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+
+///////////////////////////////////////
+// Task 5: Implementing Bulk Updates //
+///////////////////////////////////////
+
+console.log("--------------------------------------");
+console.log("Task 5: Implementing Bulk Updates");
+
+// Added button in HTML on line 43
+
+const incRiskLevel = document.getElementById("incRiskLevel");
+
+incRiskLevel.addEventListener("click", (event) => {
+  event.stopPropagation();
+
+  const cards = document.querySelectorAll(".riskCard");
+
+  if (cards) {
+    // conver to array
+    const cardsArray = Array.from(cards);
+
+    // added this so that if you edit a card and change level, color is correct
+    cardsArray.forEach((card) => {
+      if (card.querySelector("p").textContent === "Low") {
+        card.querySelector("p").textContent = "Medium";
+        card.style.backgroundColor = "gold";
+
+      } else if (card.querySelector("p").textContent === "Medium") {
+        card.querySelector("p").textContent = "High";
+        card.style.backgroundColor = "#D2042D";
+      }
+    });
+  }
+});
+
+
