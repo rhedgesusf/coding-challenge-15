@@ -46,6 +46,20 @@ function addRiskItem(riskName, riskLevel, department) {
     <label>${department}</label>
     </div>`;
 
+    switch(riskLevel) {
+        case "High":
+            card.style.backgroundColor = "#D2042D";
+            break;
+        case "Medium":
+            card.style.backgroundColor = "gold";
+            break;
+        case "Low":
+            card.style.backgroundColor = "darkgreen";
+            break;
+        default:
+            card.style.backgroundColor = "darkgrey";
+    }
+
     // create a button
     const button = document.createElement("button");
     button.textContent = "Resolve";
@@ -72,6 +86,18 @@ addRiskItem("Supply Chain Disruption", "Medium", "Operations");
 console.log("--------------------------------------");
 console.log("Task 3: Removing Risk Items");
 
-// Added under task 2 on line 49-59
+// Added under task 2 on line 64-73
 
 addRiskItem("Market Fluctuations", "High", "Finance");
+
+/////////////////////////////////////////
+// Task 4: Categorizing Risks by Level //
+/////////////////////////////////////////
+
+console.log("--------------------------------------");
+console.log("Task 4: Categorizing Risks by Level");
+
+// Under Task 2 added risk level colors between line 49-61
+
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");
