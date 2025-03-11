@@ -1,39 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Risk Management Dashboard</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 20px;
-        }
-        .riskCard {
-            padding: 10px;
-            margin: 10px;
-            background-color: lightgray;
-            border-radius: 5px;
-            display: inline-block;
-        }
-        #riskDashboard {
-            margin-bottom: 20px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+      }
+      .riskCard {
+        padding: 10px;
+        margin: 10px;
+        background-color: lightgray;
+        border-radius: 5px;
+        display: inline-block;
+      }
+      #riskDashboard {
+        margin-bottom: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header><h1>Coding Challenge #15</h1></header>
 
     <main>
-    <h2>Risk Management Dashboard</h2>
-        <div id="riskDashboard"></div>
+      <h2>Risk Management Dashboard</h2>
+      <form id="inquiryForm">
+        <label for="name">Risk Name:</label>
+        <input type="text" id="name" name="name" required /><br /><br />
 
+        <label for="level">Level:</label>
+        <input type="text" id="level" name="level" required /><br /><br />
 
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" /><br /><br />
 
-    <!-- Link to JavaScript File -->
-    <script src="cc_15.js"></script>
-</main>
-<footer>Site designed by Riley Hedges</footer>
-</body>
+        <button type="button">Add Risk</button>
+      </form>
+      <div id="riskDashboard"></div>
+
+      <!-- Link to JavaScript File -->
+      <script src="cc_15.js"></script>
+    </main>
+    <footer>Site designed by Riley Hedges</footer>
+  </body>
 </html>
